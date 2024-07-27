@@ -3,6 +3,7 @@ import { FaUser, FaPenNib } from "react-icons/fa";
 import { motion } from "framer-motion";
 import axios from "axios";
 import "./Register.css";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [user, setUser] = useState({
@@ -40,6 +41,8 @@ function Register() {
       });
       console.log(user, "from frontend")
       console.log("User created successfully", response.data);
+      const navigate = useNavigate();
+      navigate('/login')
     } catch (err) {
       console.log(err);
     }
