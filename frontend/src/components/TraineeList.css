@@ -1,7 +1,7 @@
 /* TraineeList.css */
 
 /* Ensure the html and body take up the full height */
-html, body {
+/* html, body {
   height: 100%;
   margin: 0;
 }
@@ -11,7 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #e0e0e0; /* Optional: background color for the whole page */
-}
+} */
 
 .trainee-list {
   max-width: 1200px;
