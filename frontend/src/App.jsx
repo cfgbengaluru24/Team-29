@@ -11,6 +11,7 @@ import Hero from "./components/Hero/Hero";
 import Root from "./Root";
 import Sign from "../components/Sign/Sign";
 import Sidebar from "./components/Side/Sidebar";
+import Audio from "./components/Audio/Audio";
 import Trainer from "../components/Trainer/Trainer";
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/side",
         element: <Trainer />,
+      },
+      {
+        path: "/audio",
+        element: <Audio />,
       },
     ],
   },

@@ -6,7 +6,9 @@ from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, create_access_token
 from pymongo import MongoClient
 import logging
+import whisper
 import os
+import numpy
 
 # Load environment variables
 load_dotenv()
@@ -136,6 +138,26 @@ def get_trainees():
     except Exception as e:
         app.logger.error(f"Error in get_trainees: {str(e)}")
         return jsonify({'error': str(e)}), 500
+
+@app.route("/upload", methods=["POST"])
+def upload_audio():
+    if "audio" not in request.files:
+        return jsonify({"error": "No audio file provided"}), 400
+
+    audio = request.files["audio"]
+    audio_data = audio.read()
+    with open("temp_audio.wav", "wb") as temp_file:
+        temp_file.write(audio_data)
+
+    model = whisper.load_model("base")
+    result = model.transcribe("temp_audio.wav")
+    print(result["text"])
+
+    
+    
+    
+
+    return jsonify({"transcription": result["text"]})
 
 if __name__ == '__main__':
     app.run(debug=True)
