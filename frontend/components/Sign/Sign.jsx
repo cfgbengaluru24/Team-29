@@ -1,12 +1,9 @@
 import "./Sign.css";
 import { useState } from "react";
 import axios from "axios";
-import { useUser } from "../../context/userContext";
-import { useNavigate } from "react-router-dom";
-axios.defaults.withCredentials = true
+
+axios.defaults.withCredentials = true;
 const Sign = () => {
-  const navigate = useNavigate();
-  const { signIn, user } = useUser();
   const [u, setU] = useState({
     username: "",
     email: "",
@@ -31,10 +28,6 @@ const Sign = () => {
           },
         }
       );
-
-      signIn(response.data.data);
-
-      navigate("/user");
 
       console.log("User loggedIn successfully");
       console.log(response.data.data);
