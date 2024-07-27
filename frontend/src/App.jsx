@@ -1,9 +1,18 @@
-import "./App.css";
-import Register from "../components/Register/Register";
-import Sign from "../components/Sign/Sign";
+import React from 'react';
+import './App.css';
+import Nav from './components/Nav/Nav';
+import FaqList from './components/Faq/Faq';
+import './components/Faq/faq.css';
+import Footer from './components/Footer';
 
 function App() {
-  return <></>;
+  return (
+    <div className="app">
+      <Nav />
+      <FaqList />
+      <Footer/>
+    </div>
+  );
 }
 
 export default App;
