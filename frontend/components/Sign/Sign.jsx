@@ -1,10 +1,12 @@
 import "./Sign.css";
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
 const Sign = () => {
+  const navigate = useNavigate();
   const [u, setU] = useState({
     name: "",
     password: "",
@@ -30,9 +32,11 @@ const Sign = () => {
         }
       );
 
-      console.log("User logged in successfully");
-      console.log(response.data.data);
-      console.log(response.data.data.username);
+      const token = response.data.access_token;
+      console.log('Token:', token); // Log the token to ensure it is received
+      sessionStorage.setItem('token', token);
+      navigate('/admin_dashboard');  // Correct route
+
     } catch (err) {
       console.log(err);
     }

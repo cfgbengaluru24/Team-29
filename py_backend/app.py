@@ -3,11 +3,11 @@ from dotenv import load_dotenv
 from flask_cors import CORS
 import json
 from flask_bcrypt import Bcrypt
-from flask_jwt_extended import JWTManager, create_access_token
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt, get_jwt_identity
 from pymongo import MongoClient
 import logging
 import os
-
+from datetime import timedelta
 # Load environment variables
 load_dotenv()
 
@@ -24,6 +24,7 @@ if client:
 
 db_name = 'db'
 collection_name = 'users'
+
 
 # Ensure the database and collection exist
 def initialize_db_and_collection(db_name, collection_name):
@@ -112,5 +113,37 @@ def login():
         app.logger.error(f"Error in login: {str(e)}")
         return jsonify({'error': str(e)}), 500
 
+@app.route('/logout', methods=['POST'])
+@jwt_required()
+def logout():
+    app.logger.debug("Logout endpoint called")
+    try:
+        jti = get_jwt()['jti']
+        blacklist.add(jti)
+        app.logger.info(f"User '{get_jwt_identity()}' logged out successfully")
+        return jsonify({'message': 'User logged out successfully'}), 200
+    
+    except Exception as e:
+        app.logger.error(f"Error in logout: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/trainees', methods=['GET'])
+def get_trainees():
+    try:
+        # Fetch all users from the collection
+        users = users_collection.find({}, {'_id': 0, 'name': 1, 'age': 1, 'contact': 1, 'gender': 1})
+        # Convert MongoDB cursor to a list of dictionaries
+        trainees = list(users)
+        return jsonify(trainees), 200
+    except Exception as e:
+        app.logger.error(f"Error in get_trainees: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+

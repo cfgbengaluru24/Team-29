@@ -1,6 +1,31 @@
 import "./styles.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import AssignTraninees from "../../src/components/TraineeList";
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
+
+  const handleTraineeButton = async () =>{
+    navigate('/assign_trainees');
+  }
+
+  const handleLogout = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      await axios.post(
+        'http://localhost:5000/logout',
+        {},
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      sessionStorage.removeItem('token');
+      navigate('/');
+      // Redirect to login page or perform other actions
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
+
   return (
     <div className="dashboard">
       <div className="sidebar">
@@ -15,7 +40,7 @@ const AdminDashboard = () => {
           <ul>
             <li>
               <a href="#" className="active">
-                Trainee's
+                Trainers
               </a>
             </li>
             <li>
@@ -32,6 +57,9 @@ const AdminDashboard = () => {
             </li>
             <li>
               <a href="#">Settings</a>
+            </li>
+            <li>
+              <button onClick={handleLogout}>Logout</button>
             </li>
           </ul>
         </nav>
@@ -94,7 +122,7 @@ const AdminDashboard = () => {
             </a>
           </div>
         </div>
-        <button className="transfer-info-btn">Trainee Info</button>
+        <button className="transfer-info-btn" onClick={handleTraineeButton}>Trainee Info</button>
       </div>
     </div>
   );
