@@ -9,7 +9,7 @@ const Root = () => {
   return (
     <div>
       {/* <Modules></Modules> */}
-      <Audio />
+      {/* <Audio /> */}
       <Outlet />
     </div>
   );

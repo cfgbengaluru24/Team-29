@@ -30,7 +30,7 @@ const Audio = () => {
     const words = text
       .split(" ")
       .filter((word) => !commonWords.includes(word.toLowerCase()));
-    setKeywords([...new Set(words)]); // Using a Set to remove duplicates
+    setKeywords([...new Set(words)]);
   };
 
   return (
