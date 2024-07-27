@@ -1,6 +1,7 @@
 import "./Nav.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../../../public/business_logo.png"
 
 const Navbar = () => {
   const [hideMenu, seHideMenu] = useState(true);
@@ -8,9 +9,7 @@ const Navbar = () => {
   return (
     <div style={{ display: "flex" }}>
       <nav className="navigation">
-        <a href="/" className="brand-name">
-          NextGen
-        </a>
+      <img src={logo} alt="NextGen" className="brand-logo" />
         <button className="hamburger" onClick={() => seHideMenu(!hideMenu)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -12,6 +12,12 @@
   backdrop-filter: blur(18px);
   backdrop-filter: saturate(20px);
 }
+
+.brand-logo {
+  width: 100px; /* Adjust the width as needed */
+  height: auto;
+}
+
 .brand-name {
   text-decoration: none;
   color: white;

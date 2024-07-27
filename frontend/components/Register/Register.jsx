@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { FaUser, FaPenNib } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import { motion } from "framer-motion";
 import axios from "axios";
 import "./Register.css";
-import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [user, setUser] = useState({
@@ -39,10 +38,8 @@ function Register() {
         },
         withCredentials: true,
       });
-      console.log(user, "from frontend")
+      console.log(user, "from frontend");
       console.log("User created successfully", response.data);
-      const navigate = useNavigate();
-      navigate('/login')
     } catch (err) {
       console.log(err);
     }
@@ -73,6 +70,7 @@ function Register() {
             placeholder="John Doe"
             onChange={handleChange}
           />
+
           <label htmlFor="email">Email</label>
           <input
             name="email"
@@ -80,6 +78,7 @@ function Register() {
             placeholder="email@example.com"
             onChange={handleChange}
           />
+
           <label htmlFor="password">Password</label>
           <input
             name="password"
@@ -87,28 +86,28 @@ function Register() {
             placeholder="password"
             onChange={handleChange}
           />
-          <label htmlFor = "role">Role</label>
-          <input
-            name = "role" 
-            type = "text"
-            placeholder="Role"
-            onChange={handleChange}
-          />
-            
-          <label htmlFor="age">Age</label>
-          <input
-            name="age"
-            type="number"
-            placeholder="30"
-            onChange={handleChange}
-          />
-          <label htmlFor="contact">Phone Number</label>
-          <input
-            name="contact"
-            type="text"
-            placeholder="+1 234 567 89"
-            onChange={handleChange}
-          />
+
+          <div className="form-row">
+            <div>
+              <label htmlFor="age">Age</label>
+              <input
+                name="age"
+                type="number"
+                placeholder="30"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="contact">Phone Number</label>
+              <input
+                name="contact"
+                type="text"
+                placeholder="+1 234 567 89"
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+
           <label htmlFor="gender">Gender</label>
           <div className="gender-options">
             <div>
@@ -132,20 +131,28 @@ function Register() {
               <label htmlFor="female">Female</label>
             </div>
           </div>
-          <label htmlFor="area">Area</label>
-          <input
-            name="area"
-            type="text"
-            placeholder="Bangalore"
-            onChange={handleChange}
-          />
-          <label htmlFor="shg">SHG</label>
-          <input
-            name="shg"
-            type="text"
-            placeholder="SHG Name"
-            onChange={handleChange}
-          />
+
+          <div className="form-row">
+            <div>
+              <label htmlFor="area">Area</label>
+              <input
+                name="area"
+                type="text"
+                placeholder="Bangalore"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="shg">SHG</label>
+              <input
+                name="shg"
+                type="text"
+                placeholder="SHG Name"
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+
           <label htmlFor="married">Married</label>
           <input
             name="married"
@@ -153,20 +160,28 @@ function Register() {
             placeholder="Married/Single"
             onChange={handleChange}
           />
-          <label htmlFor="income">Income</label>
-          <input
-            name="income"
-            type="number"
-            placeholder="1000"
-            onChange={handleChange}
-          />
-          <label htmlFor="loans">Loans</label>
-          <input
-            name="loans"
-            type="number"
-            placeholder="1000"
-            onChange={handleChange}
-          />
+
+          <div className="form-row">
+            <div>
+              <label htmlFor="income">Income</label>
+              <input
+                name="income"
+                type="number"
+                placeholder="1000"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="loans">Loans</label>
+              <input
+                name="loans"
+                type="number"
+                placeholder="1000"
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+
           <label htmlFor="assets">Assets</label>
           <div className="assets-options">
             <div>
@@ -190,6 +205,7 @@ function Register() {
               <label htmlFor="no">No</label>
             </div>
           </div>
+
           <motion.button
             variants={buttonVariants}
             whileHover="hover"

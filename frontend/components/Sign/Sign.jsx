@@ -38,7 +38,6 @@ const Sign = () => {
         console.log(response.data.access_token); // Log the access_token
         // Store the access token in local storage or state
         localStorage.setItem('access_token', response.data.access_token);
-        // console.log("response data: ", response.data);
         {response.data.user.role == "trainer" && navigate("/admin_dashboard")}
         {response.data.user.role == "admin" && navigate("/admin_dashboard")};
       } else {

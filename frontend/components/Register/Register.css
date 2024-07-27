@@ -4,9 +4,19 @@
   align-items: center;
   height: 100vh;
   background-color: #f0f2f5;
-  margin-top: 250px;
+  margin-top: 50px;
   font-family: "Arial", sans-serif;
 }
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-row > div {
+  width: 48%;
+}
+
 
 .cont-reg {
   background-color: #ffffff;

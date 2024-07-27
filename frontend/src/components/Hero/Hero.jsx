@@ -6,32 +6,48 @@ const Hero = () => {
     <div className="hero-main">
       <div className="part2">
         <div className="hero-main-txt">
-          <span style={{ "--i": 1 }}>T</span>
-          <span style={{ "--i": 2 }}>h</span>
-          <span style={{ "--i": 3 }}>i</span>
-          <span style={{ "--i": 4 }}>n</span>
-          <span style={{ "--i": 5 }}>K</span>
+          <span style={{ "--i": 1 }}>U</span>
+          <span style={{ "--i": 2 }}>p</span>
+          <span style={{ "--i": 3 }}>l</span>
+          <span style={{ "--i": 4 }}>i</span>
+          <span style={{ "--i": 5 }}>f</span>
+          <span style={{ "--i": 6 }}>t</span>
+          <span style={{ "--i": 7 }}>i</span>
+          <span style={{ "--i": 8 }}>n</span>
+          <span style={{ "--i": 9 }}>g</span>
           <span className="black" style={{ "--i": 6 }}>
             |
           </span>
-          <span style={{ "--i": 7 }}>j</span>
-          <span style={{ "--i": 8 }}>o</span>
-          <span style={{ "--i": 9 }}>b</span>
+          <span style={{ "--i": 10 }}>W</span>
+          <span style={{ "--i": 11 }}>o</span>
+          <span style={{ "--i": 12 }}>m</span>
+          <span style={{ "--i": 13 }}>e</span>
+          <span style={{ "--i": 14 }}>n</span>
+          <span style={{ "--i": 14 }}>,</span>
           <span className="black" style={{ "--i": 10 }}>
             |
           </span>
-          <span style={{ "--i": 11 }}>t</span>
-          <span style={{ "--i": 12 }}>h</span>
-          <span style={{ "--i": 13 }}>i</span>
-          <span style={{ "--i": 14 }}>n</span>
-          <span style={{ "--i": 15 }}>k</span>
+          <span style={{ "--i": 15 }}>t</span>
+          <span style={{ "--i": 16 }}>r</span>
+          <span style={{ "--i": 17 }}>a</span>
+          <span style={{ "--i": 18 }}>n</span>
+          <span style={{ "--i": 19 }}>s</span>
+          <span style={{ "--i": 20 }}>f</span>
+          <span style={{ "--i": 21 }}>o</span>
+          <span style={{ "--i": 22 }}>r</span>
+          <span style={{ "--i": 23 }}>m</span>
+          <span style={{ "--i": 24 }}>i</span>
+          <span style={{ "--i": 25 }}>n</span>
+          <span style={{ "--i": 26 }}>g</span>
+
           <span className="black" style={{ "--i": 16 }}>
             |
           </span>
-          <span style={{ "--i": 17 }}>U</span>
-          <span style={{ "--i": 18 }}>s</span>
-          <span style={{ "--i": 19 }}>.</span>
-          <span style={{ "--i": 20 }}>.</span>
+          <span style={{ "--i": 27 }}>L</span>
+          <span style={{ "--i": 28 }}>i</span>
+          <span style={{ "--i": 29 }}>v</span>
+          <span style={{ "--i": 30 }}>e</span>
+          <span style={{ "--i": 31 }}>s</span>
         </div>
         <span className="hero-byline">Empowering Professional Growth</span>
 
@@ -53,7 +69,7 @@ const Hero = () => {
                 color: "skyblue",
               }}
             >
-              <span>Are you a Recruiter?</span>
+              <span>Register</span>
             </Link>
           </button>
         </div>
