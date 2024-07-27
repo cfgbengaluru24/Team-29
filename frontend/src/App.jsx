@@ -6,6 +6,7 @@ import FaqList from "./components/Faq/Faq";
 import "./components/Faq/faq.css";
 import Footer from "./components/Footer";
 import Register from "../components/Register/Register";
+import AdminDashboard from "../components/Admin/AdminDashboard";
 import Hero from "./components/Hero/Hero";
 import Root from "./Root";
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
+      {
+        path: "/admin_dashboard",
+        element: <AdminDashboard />,
+      }
     ],
   },
 ]);
