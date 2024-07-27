@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { FaUser } from "react-icons/fa";
-import { FaPenNib } from "react-icons/fa";
+import { FaUser, FaPenNib } from "react-icons/fa";
 import { motion } from "framer-motion";
-
 import axios from "axios";
 import "./Register.css";
 
@@ -10,40 +8,32 @@ function Register() {
   const [file, setFile] = useState(null);
   const [res, setRes] = useState(null);
   const [user, setUser] = useState({
-    username: "",
+    name: "",
     email: "",
     password: "",
-    img: "",
-    country: "",
-    name: "",
+    age: "",
     contact: "",
-    resume: " ",
-    isSeller: false,
-    desc: "",
+    gender: "",
+    income: "",
+    assets: "",
+    shg: "",
+    salary: "",
+    loans: "",
+    area: "",
+    married: ""
   });
 
   const handleChange = (e) => {
-    setUser((prev) => {
-      return { ...prev, [e.target.name]: e.target.value };
-    });
+    setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      console.log(user);
       const formData = new FormData();
-      formData.append("username", user.username);
-      formData.append("email", user.email);
-      formData.append("password", user.password);
-      formData.append("img", file);
-      formData.append("country", user.country);
-      formData.append("name", user.name);
-      formData.append("contact", user.contact);
-      formData.append("resume", res);
-      formData.append("isSeller", user.isSeller);
-      formData.append("desc", user.desc);
+      for (const key in user) {
+        formData.append(key, user[key]);
+      }
       await axios.post("http://localhost:3000/api/v1/users/register", formData);
       console.log("User created successfully");
     } catch (err) {
@@ -69,39 +59,73 @@ function Register() {
             <span className="yellow"></span>
             <span className="green"></span>
           </div>
-          <span className="textreg">register@admin.dev</span>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="leftform">
             <div className="line-reg">
-              <FaUser className="icon-reg" /> <h1>Create new account</h1>
+              <FaUser className="icon-reg" /> <h1>Create New Account</h1>
             </div>
 
-            <label htmlFor="">Username</label>
+            <label htmlFor="name">Name</label>
             <input
-              name="username"
+              name="name"
               type="text"
-              placeholder="johndoe"
+              placeholder="John Doe"
               onChange={handleChange}
             />
-            <label htmlFor="">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               name="email"
               type="email"
-              placeholder="email"
+              placeholder="email@example.com"
               onChange={handleChange}
             />
-            <label htmlFor="">Password</label>
-            <input name="password" type="password" onChange={handleChange} />
-            <label htmlFor="">Profile Picture</label>
-            <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-            <label htmlFor="">Country</label>
+            <label htmlFor="password">Password</label>
             <input
-              name="country"
-              type="text"
-              placeholder="Uttar Pradesh"
+              name="password"
+              type="password"
+              placeholder=""
               onChange={handleChange}
             />
+            <label htmlFor="age">Age</label>
+            <input
+              name="age"
+              type="number"
+              placeholder="30"
+              onChange={handleChange}
+            />
+            <label htmlFor="contact">Phone Number</label>
+            <input
+              name="contact"
+              type="text"
+              placeholder="+1 234 567 89"
+              onChange={handleChange}
+            />
+            <div>
+              <label>Gender</label>
+              <div style={{ display: 'flex', marginTop: '10px' }}>
+                <div style={{ marginRight: '20px' }}>
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="male"
+                    value="Male"
+                    onChange={handleChange}
+                  />
+                  <label htmlFor="male">Male</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="female"
+                    value="Female"
+                    onChange={handleChange}
+                  />
+                  <label htmlFor="female">Female</label>
+                </div>
+              </div>
+            </div>
 
             <motion.button
               variants={buttonVariants}
@@ -117,31 +141,66 @@ function Register() {
               <FaPenNib className="icon-reg" /> <h1>Basic Information</h1>
             </div>
 
-            <label htmlFor="">Name</label>
+            <label htmlFor="area">Area</label>
             <input
-              name="name"
+              name="area"
               type="text"
-              placeholder="dev"
+              placeholder="Bangalore"
               onChange={handleChange}
             />
-            <label htmlFor="">Add Resume</label>
-            <input type="file" onChange={(e) => setRes(e.target.files[0])} />
-            <label htmlFor="">Phone Number</label>
+            <label htmlFor="shg">SHG</label>
             <input
-              name="phone"
+              name="shg"
               type="text"
-              placeholder="+1 234 567 89"
+              placeholder="SHG Name"
               onChange={handleChange}
             />
-            <label htmlFor="">Write about Yourself 🖋️</label>
-            <textarea
-              placeholder="A short description of yourself"
-              name="desc"
-              id=""
-              cols="30"
-              rows="10"
+            <label htmlFor="married">Married</label>
+            <input
+              name="married"
+              type="text"
+              placeholder="Married/Single"
               onChange={handleChange}
-            ></textarea>
+            />
+            <label htmlFor="income">Income</label>
+            <input
+              name="income"
+              type="number"
+              placeholder="1000"
+              onChange={handleChange}
+            />
+            <label htmlFor="loans">Loans</label>
+            <input
+              name="loans"
+              type="number"
+              placeholder="1000"
+              onChange={handleChange}
+            />
+            <div>
+              <label>Assets</label>
+              <div style={{ display: 'flex', marginTop: '10px' }}>
+                <div style={{ marginRight: '20px' }}>
+                  <input
+                    type="radio"
+                    name="assets"
+                    id="yes"
+                    value="Yes"
+                    onChange={handleChange}
+                  />
+                  <label htmlFor="yes">Yes</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="assets"
+                    id="no"
+                    value="No"
+                    onChange={handleChange}
+                  />
+                  <label htmlFor="no">No</label>
+                </div>
+              </div>
+            </div>
           </div>
         </form>
       </div>
