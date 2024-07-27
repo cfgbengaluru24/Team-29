@@ -1,9 +1,13 @@
 import "./App.css";
-import Register from "../components/Register/Register";
-import Sign from "../components/Sign/Sign";
+
+import AdminDashboard from "../components/Admin/AdminDashboard";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <AdminDashboard />
+    </>
+  );
 }
 
 export default App;
