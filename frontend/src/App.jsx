@@ -10,8 +10,9 @@ import AdminDashboard from "../components/Admin/AdminDashboard";
 import Hero from "./components/Hero/Hero";
 import Root from "./Root";
 import Sign from "../components/Sign/Sign";
-
-
+import Sidebar from "./components/Side/Sidebar";
+import Trainer from "../components/Trainer/Trainer";
+import AboutUs from "./components/AboutUs/Aboutus";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,17 +23,26 @@ const router = createBrowserRouter([
         element: <Hero />,
       },
       {
+        path: "/aboutus",
+        element: <AboutUs />,
+      },
+      {
         path: "/register",
         element: <Register />,
       },
       {
         path: "/admin_dashboard",
         element: <AdminDashboard />,
-      }, 
+      },
       {
         path: "/login",
         element: <Sign />,
-      }
+      },
+
+      {
+        path: "/side",
+        element: <Trainer />,
+      },
     ],
   },
 ]);
