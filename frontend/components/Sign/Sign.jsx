@@ -5,7 +5,6 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 const Sign = () => {
   const [u, setU] = useState({
-    username: "",
     email: "",
     password: "",
   });
@@ -46,22 +45,18 @@ const Sign = () => {
             <span className="yellow"></span>
             <span className="green"></span>
           </div>
-          <span className="textreg">sign@admin.dev</span>
         </div>
         <div className="sign-field">
           {" "}
-          <label htmlFor="'">
-            Email:
-            <input name="email" type="email" onChange={handleChange} />
-          </label>
-          <label htmlFor="'">
-            Username:
-            <input name="username" type="text" onChange={handleChange} />
-          </label>
-          <label htmlFor="'">
-            Password:
+          <label htmlFor="">Email</label>
+            <input
+              name="email"
+              type="email"
+              placeholder="email"
+              onChange={handleChange}
+            />
+            <label htmlFor="">Password</label>
             <input name="password" type="password" onChange={handleChange} />
-          </label>
         </div>
 
         <div className="sign-button-field">
