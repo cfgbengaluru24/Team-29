@@ -124,6 +124,18 @@ def login():
     except Exception as e:
         app.logger.error(f"Error in login: {str(e)}")
         return jsonify({'error': str(e)}), 500
+        
+@app.route('/trainees', methods=['GET'])
+def get_trainees():
+    try:
+        # Fetch all users from the collection
+        users = users_collection.find({}, {'_id': 0, 'name': 1, 'age': 1, 'contact': 1, 'gender': 1})
+        # Convert MongoDB cursor to a list of dictionaries
+        trainees = list(users)
+        return jsonify(trainees), 200
+    except Exception as e:
+        app.logger.error(f"Error in get_trainees: {str(e)}")
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
