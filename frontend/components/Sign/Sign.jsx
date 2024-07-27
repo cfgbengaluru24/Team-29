@@ -1,13 +1,16 @@
 import "./Sign.css";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 axios.defaults.withCredentials = true;
+
 const Sign = () => {
   const [u, setU] = useState({
-    email: "",
+    name: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setU((prev) => {
@@ -19,18 +22,28 @@ const Sign = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/users/login",
+        "http://127.0.0.1:5000/login",
         u,
         {
           headers: {
             "Content-Type": "application/json",
           },
+          withCredentials: true,
         }
       );
 
-      console.log("User loggedIn successfully");
-      console.log(response.data.data);
-      console.log(response.data.data.username);
+      console.log("User logged in successfully");
+      console.log(response.data); // Print the entire response object
+      if (response.data && response.data.access_token) {
+        console.log(response.data.access_token); // Log the access_token
+        // Store the access token in local storage or state
+        localStorage.setItem('access_token', response.data.access_token);
+        // console.log("response data: ", response.data);
+        {response.data.user.role == "trainer" && navigate("/admin_dashboard")}
+        {response.data.user.role == "admin" && navigate("/admin_dashboard")};
+      } else {
+        console.log('Access token not found in the response data');
+      }
     } catch (err) {
       console.log(err);
     }
@@ -47,20 +60,18 @@ const Sign = () => {
           </div>
         </div>
         <div className="sign-field">
-          {" "}
-          <label htmlFor="">Email</label>
-            <input
-              name="email"
-              type="email"
-              placeholder="email"
-              onChange={handleChange}
-            />
-            <label htmlFor="">Password</label>
-            <input name="password" type="password" onChange={handleChange} />
+          <label htmlFor="">Name</label>
+          <input
+            name="name"
+            type="text"
+            placeholder="name"
+            onChange={handleChange}
+          />
+          <label htmlFor="">Password</label>
+          <input name="password" type="password" onChange={handleChange} />
         </div>
 
         <div className="sign-button-field">
-          {" "}
           <button className="sign-button" type="submit">
             Submit
           </button>
