@@ -3,9 +3,10 @@ import { useState } from "react";
 import axios from "axios";
 
 axios.defaults.withCredentials = true;
+
 const Sign = () => {
   const [u, setU] = useState({
-    email: "",
+    name: "",
     password: "",
   });
 
@@ -19,16 +20,17 @@ const Sign = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/users/login",
+        "http://127.0.0.1:5000/login",
         u,
         {
           headers: {
             "Content-Type": "application/json",
           },
+          withCredentials: true,
         }
       );
 
-      console.log("User loggedIn successfully");
+      console.log("User logged in successfully");
       console.log(response.data.data);
       console.log(response.data.data.username);
     } catch (err) {
@@ -47,20 +49,18 @@ const Sign = () => {
           </div>
         </div>
         <div className="sign-field">
-          {" "}
-          <label htmlFor="">Email</label>
-            <input
-              name="email"
-              type="email"
-              placeholder="email"
-              onChange={handleChange}
-            />
-            <label htmlFor="">Password</label>
-            <input name="password" type="password" onChange={handleChange} />
+          <label htmlFor="">Name</label>
+          <input
+            name="name"
+            type="text"
+            placeholder="name"
+            onChange={handleChange}
+          />
+          <label htmlFor="">Password</label>
+          <input name="password" type="password" onChange={handleChange} />
         </div>
 
         <div className="sign-button-field">
-          {" "}
           <button className="sign-button" type="submit">
             Submit
           </button>
