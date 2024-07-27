@@ -1,0 +1,51 @@
+.modules-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  .modules-heading {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .language-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .language-selector p {
+    margin: 0 10px 0 0;
+  }
+  
+  .language-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .language-button.selected {
+    background-color: blue;
+  }
+  
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .video-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
