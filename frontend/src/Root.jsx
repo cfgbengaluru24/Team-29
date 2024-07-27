@@ -6,9 +6,8 @@ import Modules from "./components/Modules";
 const Root = () => {
   return (
     <div>
-      <Navbar />
-      <Modules></Modules>
-      <Outlet />  
+      {/* <Modules></Modules> */}
+      <Outlet />
     </div>
   );
 };

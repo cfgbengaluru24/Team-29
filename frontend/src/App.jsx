@@ -10,6 +10,8 @@ import AdminDashboard from "../components/Admin/AdminDashboard";
 import Hero from "./components/Hero/Hero";
 import Root from "./Root";
 import Sign from "../components/Sign/Sign";
+import Sidebar from "./components/Side/Sidebar";
+import Trainer from "../components/Trainer/Trainer";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,11 +28,16 @@ const router = createBrowserRouter([
       {
         path: "/admin_dashboard",
         element: <AdminDashboard />,
-      }, 
+      },
       {
         path: "/login",
         element: <Sign />,
-      }
+      },
+
+      {
+        path: "/side",
+        element: <Trainer />,
+      },
     ],
   },
 ]);
