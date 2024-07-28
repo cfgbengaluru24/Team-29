@@ -51,6 +51,12 @@ Start the Flask server:
 
 flask run
 
+> Setting Up Streamlit file
+1. unzip crew_tutorial
+2. app.py for visualization
+3. Both of them are deployed on streamlit cloud
+
+
 Frontend Modules
 AdminDashboard
 The AdminDashboard component provides an interface for administrators to manage trainers and view their information. It features:
