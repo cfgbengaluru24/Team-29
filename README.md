@@ -1,11 +1,12 @@
 # Team-29
-# Gamified Training Management System
+# TrASST
 
 ## Project Name
-Gamified Training Management System
+TrASST
+ 
 
 ## Description
-The Gamified Training Management System is a web application designed to enhance training experiences by incorporating gamification techniques. This project features an Admin Dashboard, Trainer information management, a user registration and login system, and an FAQ section. The frontend is built using React, while the backend is developed with Flask.
+It is a web application designed to enhance training experiences by incorporating gamification techniques. This project features an Admin Dashboard, Trainer information management, a user registration and login system, and an FAQ section. The frontend is built using React, while the backend is developed with Flask.
 
 ## Table of Contents
 - [Project Setup](#project-setup)
