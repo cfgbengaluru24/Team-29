@@ -1,35 +1,43 @@
 # Team-29
-Project Name: Gamified Training Management System
-Description
+# Gamified Training Management System
+
+## Project Name
+Gamified Training Management System
+
+## Description
 The Gamified Training Management System is a web application designed to enhance training experiences by incorporating gamification techniques. This project features an Admin Dashboard, Trainer information management, a user registration and login system, and an FAQ section. The frontend is built using React, while the backend is developed with Flask.
 
-Table of Contents
-Project Setup
-Frontend Modules
-AdminDashboard
-Register
-Sign
-Trainer
-Backend API
-Setup
-Routes
-Technologies Used
-License
-Credits
-Contact Information
-Project Setup
-Prerequisites
-Node.js
-npm (Node Package Manager)
-Python 3.x
-MongoDB
+## Table of Contents
+- [Project Setup](#project-setup)
+- [Frontend Modules](#frontend-modules)
+  - [AdminDashboard](#admindashboard)
+  - [Register](#register)
+  - [Sign](#sign)
+  - [Trainer](#trainer)
+- [Backend API](#backend-api)
+  - [Setup](#setup)
+  - [Routes](#routes)
+- [Technologies Used](#technologies-used)
+- [License](#license)
+- [Credits](#credits)
+- [Contact Information](#contact-information)
 
-Installation
+## Project Setup
 
-Clone the repository:
-Copy code
+### Prerequisites
+- Node.js
+- npm (Node Package Manager)
+- Python 3.x
+- MongoDB
+
+### Installation
+
+#### Clone the repository:
+```bash
 git clone https://github.com/yourusername/gamified-training-management.git
 cd Team-29
+```
+
 
 Frontend Setup:
 Copy code
