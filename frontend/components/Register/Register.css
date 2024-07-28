@@ -1,0 +1,107 @@
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+  margin-top: 50px;
+  font-family: "Arial", sans-serif;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-row > div {
+  width: 48%;
+}
+
+
+.cont-reg {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.icon-reg {
+  font-size: 30px;
+  margin-right: 10px;
+  color: #007bff;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+}
+
+label {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="radio"],
+input[type="submit"],
+textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gender-options,
+.assets-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.gender-options div,
+.assets-options div {
+  display: flex;
+  align-items: center;
+}
+
+.gender-options label,
+.assets-options label {
+  margin-left: 5px;
+}
+
+.register-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  margin-top: 20px;
+}
+
+.register-button:hover {
+  background-color: #218838;
+}
